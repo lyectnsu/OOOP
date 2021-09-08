@@ -1,0 +1,4 @@
+/snap/clion/163/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/lyect/Desktop/OOOP/lab0b
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/lyect/Desktop/OOOP/lab0b/cmake-build-debug
