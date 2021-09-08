@@ -4,6 +4,11 @@ bool check(char symbol){
     return std::isalpha(symbol) || std::isdigit(symbol);
 }
 
+bool is_empty(std::ifstream& pFile)
+{
+    return pFile.peek() == std::ifstream::traits_type::eof();
+}
+
 std::list<std::string> splitLine(const std::string& inputString){
     int beginOfWord = 0;
     std::list<std::string> result;
@@ -24,7 +29,9 @@ std::map<std::string, int> countFrequenciesInFile(const std::string& fileName) {
     std::ifstream file(fileName);
 
     std::map<std::string, int> freqs;
-
+    if (is_empty(file)){
+        return freqs;
+    }
     std::string buffer;
     while (!file.eof()) {
         std::getline(file, buffer);

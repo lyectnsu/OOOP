@@ -7,6 +7,8 @@
 
 bool check(char symbol);
 
+bool is_empty(std::ifstream& pFile);
+
 std::list<std::string> splitLine(const std::string& inputString);
 
 std::map<std::string, int> countFrequenciesInFile(const std::string& fileName);
