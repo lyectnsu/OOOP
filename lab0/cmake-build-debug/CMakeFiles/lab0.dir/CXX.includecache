@@ -11,6 +11,8 @@ module1.h
 /home/lyect/Desktop/OOOP/lab0/module1.h
 module2.h
 /home/lyect/Desktop/OOOP/lab0/module2.h
+module3.h
+/home/lyect/Desktop/OOOP/lab0/module3.h
 iostream
 -
 
@@ -19,6 +21,14 @@ string
 -
 
 /home/lyect/Desktop/OOOP/lab0/module2.h
+string
+-
+
+/home/lyect/Desktop/OOOP/lab0/module3.cpp
+module3.h
+/home/lyect/Desktop/OOOP/lab0/module3.h
+
+/home/lyect/Desktop/OOOP/lab0/module3.h
 string
 -
 

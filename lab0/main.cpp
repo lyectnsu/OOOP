@@ -1,25 +1,9 @@
 #include "module1.h"
 #include "module2.h"
+#include "module3.h"
 #include <iostream>
 
-namespace A {
-    void f(int) {std::cout << "int\n";}
-}
-
-  // f is a synonym for A::f(int) only
-
-namespace A {
-    void f(char) {std::cout << "char\n";}
-}
-
-void b() {
-    using A::f;   // refers to A::f(int) AND A::f(char)
-    f(1);   // calls A::f(char);
-}
-
-int main(int argc, char** argv)
-{
-    b();
+int main(int argc, char** argv){
     std::cout <<  "Hello world!" << "\n";
 
     std::cout << Module1::getMyName() << "\n";
@@ -34,4 +18,6 @@ int main(int argc, char** argv)
 
     using Module2::getMyName;
     std::cout << getMyName() << "\n"; // (D)
+
+    std::cout << Module3::getMyName() << "\n";
 }

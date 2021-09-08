@@ -97,6 +97,12 @@
 		<Unit filename="/home/lyect/Desktop/OOOP/lab0/module2.h">
 			<Option target="lab0"/>
 		</Unit>
+		<Unit filename="/home/lyect/Desktop/OOOP/lab0/module3.cpp">
+			<Option target="lab0"/>
+		</Unit>
+		<Unit filename="/home/lyect/Desktop/OOOP/lab0/module3.h">
+			<Option target="lab0"/>
+		</Unit>
 		<Unit filename="/home/lyect/Desktop/OOOP/lab0/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

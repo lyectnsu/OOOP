@@ -4,10 +4,14 @@
 CMakeFiles/lab0.dir/main.cpp.o: \
  ../main.cpp \
  ../module1.h \
- ../module2.h
+ ../module2.h \
+ ../module3.h
 CMakeFiles/lab0.dir/module1.cpp.o: \
  ../module1.cpp \
  ../module1.h
 CMakeFiles/lab0.dir/module2.cpp.o: \
  ../module2.cpp \
  ../module2.h
+CMakeFiles/lab0.dir/module3.cpp.o: \
+ ../module3.cpp \
+ ../module3.h

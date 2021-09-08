@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lyect/Desktop/OOOP/lab0/main.cpp" "/home/lyect/Desktop/OOOP/lab0/cmake-build-debug/CMakeFiles/lab0.dir/main.cpp.o"
   "/home/lyect/Desktop/OOOP/lab0/module1.cpp" "/home/lyect/Desktop/OOOP/lab0/cmake-build-debug/CMakeFiles/lab0.dir/module1.cpp.o"
   "/home/lyect/Desktop/OOOP/lab0/module2.cpp" "/home/lyect/Desktop/OOOP/lab0/cmake-build-debug/CMakeFiles/lab0.dir/module2.cpp.o"
+  "/home/lyect/Desktop/OOOP/lab0/module3.cpp" "/home/lyect/Desktop/OOOP/lab0/cmake-build-debug/CMakeFiles/lab0.dir/module3.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

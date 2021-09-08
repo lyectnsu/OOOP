@@ -201,6 +201,30 @@ module2.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab0.dir/build.make CMakeFiles/lab0.dir/module2.cpp.s
 .PHONY : module2.cpp.s
 
+module3.o: module3.cpp.o
+.PHONY : module3.o
+
+# target to build an object file
+module3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab0.dir/build.make CMakeFiles/lab0.dir/module3.cpp.o
+.PHONY : module3.cpp.o
+
+module3.i: module3.cpp.i
+.PHONY : module3.i
+
+# target to preprocess a source file
+module3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab0.dir/build.make CMakeFiles/lab0.dir/module3.cpp.i
+.PHONY : module3.cpp.i
+
+module3.s: module3.cpp.s
+.PHONY : module3.s
+
+# target to generate assembly for a file
+module3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab0.dir/build.make CMakeFiles/lab0.dir/module3.cpp.s
+.PHONY : module3.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,6 +243,9 @@ help:
 	@echo "... module2.o"
 	@echo "... module2.i"
 	@echo "... module2.s"
+	@echo "... module3.o"
+	@echo "... module3.i"
+	@echo "... module3.s"
 .PHONY : help
 
 
