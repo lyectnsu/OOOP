@@ -1,7 +1,7 @@
 #include "parser.h"
 
 bool check(char symbol){
-    return std::isalpha(symbol) || std::isdigit(symbol);
+    return std::isalpha(symbol);
 }
 
 bool is_empty(std::ifstream& pFile)
@@ -10,27 +10,30 @@ bool is_empty(std::ifstream& pFile)
 }
 
 std::list<std::string> splitLine(const std::string& inputString){
-    int beginOfWord = 0;
+    std::string subString;
     std::list<std::string> result;
-    for (int i = 0; i < inputString.size(); ++i){
-        while (!check(inputString[i])){
-            ++i;
+    int i = 0;
+    while (i < inputString.size()){
+        if (!check(inputString[i])){
+            if (!subString.empty()){
+                result.push_back(subString);
+            }
         }
-        beginOfWord = i;
-        while (check(inputString[i])){
-            ++i;
+        else {
+            subString += inputString[i];
         }
-        result.push_back(inputString.substr(beginOfWord, i - beginOfWord));
+        ++i;
     }
     return result;
 }
 
-std::map<std::string, int> countFrequenciesInFile(const std::string& fileName) {
+std::vector<std::pair<std::string, int>> countFrequenciesInFile(const std::string& fileName) {
     std::ifstream file(fileName);
 
     std::map<std::string, int> freqs;
+    std::vector<std::pair<std::string, int>> freqsV;
     if (is_empty(file)){
-        return freqs;
+        return freqsV;
     }
     std::string buffer;
     while (!file.eof()) {
@@ -43,10 +46,21 @@ std::map<std::string, int> countFrequenciesInFile(const std::string& fileName) {
     }
 
     file.close();
-    return freqs;
+
+    for (const auto& p: freqs){
+        freqsV.emplace_back(p);
+    }
+
+    auto cmp = [](std::pair<std::string, int> const &a, std::pair<std::string, int> const &b){
+        return a.second != b.second?  a.second < b.second : a.first < b.first;
+    };
+
+    std::sort(freqsV.rbegin(), freqsV.rend(), cmp);
+
+    return freqsV;
 }
 
-void writeCSV(const std::map<std::string, int>& freqs, const std::string& CSVName){
+void writeCSV(std::vector<std::pair<std::string, int>> &freqs, std::string &CSVName){
     std::ofstream file(CSVName);
 
     int totalWords = 0;

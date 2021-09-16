@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/lyect/Desktop/OOOP/lab0b/main.cpp
-iostream
--
-string
--
-map
--
-parser.h
-/home/lyect/Desktop/OOOP/lab0b/parser.h
-
 /home/lyect/Desktop/OOOP/lab0b/parser.cpp
 parser.h
 /home/lyect/Desktop/OOOP/lab0b/parser.h
@@ -30,5 +20,9 @@ map
 fstream
 -
 iomanip
+-
+algorithm
+-
+vector
 -
 
