@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/lab1.dir/main.cpp.o CMakeFiles/lab1.dir/TritSet.cpp.o CMakeFiles/lab1.dir/Trit.cpp.o CMakeFiles/lab1.dir/TritPlacer.cpp.o -o lab1 

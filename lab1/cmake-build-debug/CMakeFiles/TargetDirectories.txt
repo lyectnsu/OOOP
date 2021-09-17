@@ -1,0 +1,3 @@
+/home/lyect/Desktop/OOOP/lab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/lyect/Desktop/OOOP/lab1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/lyect/Desktop/OOOP/lab1/cmake-build-debug/CMakeFiles/lab1.dir

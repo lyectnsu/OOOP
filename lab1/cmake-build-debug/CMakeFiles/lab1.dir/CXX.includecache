@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lyect/Desktop/OOOP/lab1/Trit.h
+iostream
+-
+
+/home/lyect/Desktop/OOOP/lab1/TritSet.h
+unordered_map
+-
+iostream
+-
+vector
+-
+Trit.h
+/home/lyect/Desktop/OOOP/lab1/Trit.h
+
+/home/lyect/Desktop/OOOP/lab1/main.cpp
+iostream
+-
+TritSet.h
+/home/lyect/Desktop/OOOP/lab1/TritSet.h
+
