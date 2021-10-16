@@ -198,6 +198,11 @@ namespace trl {
             }
         }
     }
+
+    void TritPlacer::operator=(TritPlacer tp){
+        Trit t = tp;
+        *this = t;
+    }
 }
 
 std::ostream &operator<<(std::ostream &os, trl::TritSet &ts){

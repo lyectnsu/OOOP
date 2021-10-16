@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lyect/Desktop/OOOP/lab2/exceptions.h
+stdexcept
+-
+
+/home/lyect/Desktop/OOOP/lab2/workers.cpp
+workers.h
+/home/lyect/Desktop/OOOP/lab2/workers.h
+
+/home/lyect/Desktop/OOOP/lab2/workers.h
+algorithm
+-
+iostream
+-
+fstream
+-
+vector
+-
+string
+-
+regex
+-
+exceptions.h
+/home/lyect/Desktop/OOOP/lab2/exceptions.h
+

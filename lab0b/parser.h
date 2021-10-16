@@ -6,14 +6,14 @@
 #include <iomanip>
 #include <algorithm>
 #include <vector>
+#include <cstring>
+#include <cstdio>
 
-bool check(char symbol);
+bool is_empty(FILE* fp);
 
-bool is_empty(std::ifstream& pFile);
+std::list<std::wstring> splitLine(std::wstring& inputString);
 
-std::list<std::string> splitLine(const std::string& inputString);
+std::vector<std::pair<std::wstring, int>> countFrequenciesInFile(const std::string& fileName);
 
-std::vector<std::pair<std::string, int>> countFrequenciesInFile(const std::string& fileName);
-
-void writeCSV(std::vector<std::pair<std::string, int>> &freqs, std::string& CSVName);
+void writeCSV(std::vector<std::pair<std::wstring, int>> &freqs, std::string& CSVName);
 

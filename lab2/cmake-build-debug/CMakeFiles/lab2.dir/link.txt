@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/lab2.dir/main.cpp.o CMakeFiles/lab2.dir/workers.cpp.o CMakeFiles/lab2.dir/factories.cpp.o CMakeFiles/lab2.dir/parser.cpp.o CMakeFiles/lab2.dir/exceptions.cpp.o -o lab2 

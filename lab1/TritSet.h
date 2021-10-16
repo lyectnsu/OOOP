@@ -52,6 +52,7 @@ namespace trl {
 
         void operator=(TritValue tv);
         void operator=(Trit tv);
+        void operator=(TritPlacer tv);
     };
 }
 

@@ -1,25 +1,22 @@
 #include "parser.h"
 
-bool check(char symbol){
-    return std::isalpha(symbol);
+bool is_empty(std::wifstream& pFile){
+    return pFile.peek() == std::wifstream::traits_type::eof();
 }
 
-bool is_empty(std::ifstream& pFile)
-{
-    return pFile.peek() == std::ifstream::traits_type::eof();
-}
+std::list<std::wstring> splitLine(std::wstring& inputString){
+    std::wstring subString;
+    std::list<std::wstring> result;
 
-std::list<std::string> splitLine(const std::string& inputString){
-    std::string subString;
-    std::list<std::string> result;
-    int i = 0;
+    size_t i = 0;
+
     while (i < inputString.size()){
-        if (!check(inputString[i])){
-            if (!subString.empty()){
+       if (!iswalpha(inputString[i])) {
+            if (!subString.empty()) {
                 result.push_back(subString);
+                subString.clear();
             }
-        }
-        else {
+        } else {
             subString += inputString[i];
         }
         ++i;
@@ -27,31 +24,30 @@ std::list<std::string> splitLine(const std::string& inputString){
     return result;
 }
 
-std::vector<std::pair<std::string, int>> countFrequenciesInFile(const std::string& fileName) {
-    std::ifstream file(fileName);
+std::vector<std::pair<std::wstring, int>> countFrequenciesInFile(const std::string& fileName) {
+    std::wifstream file(fileName);
 
-    std::map<std::string, int> freqs;
-    std::vector<std::pair<std::string, int>> freqsV;
+    std::map<std::wstring, int> freqs;
+    std::vector<std::pair<std::wstring, int>> freqsV;
     if (is_empty(file)){
         return freqsV;
     }
-    std::string buffer;
+
+    std::wstring buffer;
     while (!file.eof()) {
         std::getline(file, buffer);
-        buffer += "#";
-        std::list<std::string> words = splitLine(buffer);
+        buffer += L'#';
+        std::list<std::wstring> words = splitLine(buffer);
         for (auto &word: words) {
             freqs[word] += 1;
         }
     }
 
-    file.close();
-
     for (const auto& p: freqs){
         freqsV.emplace_back(p);
     }
 
-    auto cmp = [](std::pair<std::string, int> const &a, std::pair<std::string, int> const &b){
+    auto cmp = [](std::pair<std::wstring, int> const &a, std::pair<std::wstring, int> const &b){
         return a.second != b.second?  a.second < b.second : a.first < b.first;
     };
 
@@ -60,20 +56,20 @@ std::vector<std::pair<std::string, int>> countFrequenciesInFile(const std::strin
     return freqsV;
 }
 
-void writeCSV(std::vector<std::pair<std::string, int>> &freqs, std::string &CSVName){
-    std::ofstream file(CSVName);
+void writeCSV(std::vector<std::pair<std::wstring, int>> &freqs, std::string &CSVName){
+    std::wofstream file(CSVName);
 
     int totalWords = 0;
     for (const auto& p : freqs){
         totalWords += p.second;
     }
 
-    file << "Word;Count;Percentage\n";
+    file << L"Word;Count;Percentage\n";
     for (const auto& p : freqs) {
-        file << p.first << ";";
-        file << p.second << ";";
+        file << p.first << L";";
+        file << p.second << L";";
         file << std::setprecision(1) << std::fixed;
-        file << (double) p.second / totalWords * 100 << "\n";
+        file << (double) p.second / totalWords * 100 << L"\n";
     }
 
     file.close();
