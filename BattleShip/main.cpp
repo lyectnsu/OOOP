@@ -84,56 +84,68 @@ int main(int argc, char *argv[]) {
         Field sPlayerShipField = Field();
 
         game->clear();
-        game->say("First player ship placing.");
-        if (fPlayerType == P_HUMAN) {
-            game->standby();
+        if (fPlayerType == P_HUMAN || sPlayerType == P_HUMAN) {
+            game->say("First player ship placing.");
+            if (fPlayerType == P_HUMAN) {
+                game->standby();
+            }
         }
 
         fPlayer->placeShips(fPlayerShipField);
-        game->standby();
 
-        game->clear();
+        if (fPlayerType == P_HUMAN || sPlayerType == P_HUMAN) {
+            game->standby();
 
-        game->say("Second player ship placing.");
-        if (sPlayerType == P_HUMAN) {
+            game->clear();
+
+            game->say("Second player ship placing.");
+            if (sPlayerType == P_HUMAN) {
+                game->standby();
+            }
+        }
+        sPlayer->placeShips(sPlayerShipField);
+
+        if (fPlayerType == P_HUMAN || sPlayerType == P_HUMAN) {
+            game->standby();
+
+            game->clear();
+
+            game->say("Round started.");
             game->standby();
         }
-
-        sPlayer->placeShips(sPlayerShipField);
-        game->standby();
-
-        game->clear();
-
-        game->say("Round started.");
-        game->standby();
 
         bool turn = true; // true - fPlayer, false - sPlayer
 
         while (fPlayer->getScore() < 10 && sPlayer->getScore() < 10) {
             if (turn) {
-                if (fPlayerType == P_HUMAN) {
+                if (fPlayerType == P_HUMAN || sPlayerType == P_HUMAN) {
                     game->clear();
-                    game->showFields({fPlayerField, fPlayerShipField});
-                } else {
-                    game->say("Waiting for first player...");
-                    game->wait(2);
+                    if (fPlayerType == P_HUMAN) {
+                        game->clear();
+                        game->showFields({fPlayerField, fPlayerShipField});
+                    } else {
+                        game->say("Waiting for first player...");
+                        game->wait(2);
+                    }
                 }
 
                 auto shootCoords = fPlayer->chooseCell(fPlayerField);
                 auto moveState = fPlayer->shoot(fPlayerField, sPlayerShipField, shootCoords);
 
-                if (fPlayerType == P_HUMAN) {
-                    if (moveState == MS_MISS) game->missMessage();
-                    if (moveState == MS_HIT) game->hitMessage();
-                    if (moveState == MS_SUNK) game->sunkMessage();
-                    std::getchar(); // костыль
-                    game->standby();
-                } else {
-                    if (moveState == MS_MISS) game->missMessageBad();
-                    if (moveState == MS_HIT) game->hitMessageBad();
-                    if (moveState == MS_SUNK) game->sunkMessageBad();
-                    game->enemyShootMessage(shootCoords);
-                    game->wait(2);
+                if (fPlayerType == P_HUMAN || sPlayerType == P_HUMAN) {
+                    if (fPlayerType == P_HUMAN) {
+                        if (moveState == MS_MISS) game->missMessage();
+                        if (moveState == MS_HIT) game->hitMessage();
+                        if (moveState == MS_SUNK) game->sunkMessage();
+                        std::getchar(); // костыль
+                        game->standby();
+                    } else {
+                        if (moveState == MS_MISS) game->missMessageBad();
+                        if (moveState == MS_HIT) game->hitMessageBad();
+                        if (moveState == MS_SUNK) game->sunkMessageBad();
+                        game->enemyShootMessage(shootCoords);
+                        game->wait(2);
+                    }
                 }
 
                 if (moveState == MS_MISS) {
@@ -145,30 +157,34 @@ int main(int argc, char *argv[]) {
                     }
                 }
             } else {
-                game->clear();
-                if (sPlayerType == P_HUMAN) {
+                if (fPlayerType == P_HUMAN || sPlayerType == P_HUMAN) {
                     game->clear();
-                    game->showFields({sPlayerField, sPlayerShipField});
-                } else {
-                    game->say("Waiting for second player...");
-                    game->wait(2);
+                    if (sPlayerType == P_HUMAN) {
+                        game->clear();
+                        game->showFields({sPlayerField, sPlayerShipField});
+                    } else {
+                        game->say("Waiting for second player...");
+                        game->wait(2);
+                    }
                 }
 
                 auto shootCoords = sPlayer->chooseCell(sPlayerField);
                 auto moveState = sPlayer->shoot(sPlayerField, fPlayerShipField, shootCoords);
 
-                if (sPlayerType == P_HUMAN) {
-                    if (moveState == MS_MISS) game->missMessage();
-                    if (moveState == MS_HIT) game->hitMessage();
-                    if (moveState == MS_SUNK) game->sunkMessage();
-                    std::getchar(); // костыль
-                    game->standby();
-                } else {
-                    if (moveState == MS_MISS) game->missMessageBad();
-                    if (moveState == MS_HIT) game->hitMessageBad();
-                    if (moveState == MS_SUNK) game->sunkMessageBad();
-                    game->enemyShootMessage(shootCoords);
-                    game->wait(2);
+                if (fPlayerType == P_HUMAN || sPlayerType == P_HUMAN) {
+                    if (sPlayerType == P_HUMAN) {
+                        if (moveState == MS_MISS) game->missMessage();
+                        if (moveState == MS_HIT) game->hitMessage();
+                        if (moveState == MS_SUNK) game->sunkMessage();
+                        std::getchar(); // костыль
+                        game->standby();
+                    } else {
+                        if (moveState == MS_MISS) game->missMessageBad();
+                        if (moveState == MS_HIT) game->hitMessageBad();
+                        if (moveState == MS_SUNK) game->sunkMessageBad();
+                        game->enemyShootMessage(shootCoords);
+                        game->wait(2);
+                    }
                 }
 
                 if (moveState == MS_MISS) {
@@ -176,8 +192,9 @@ int main(int argc, char *argv[]) {
                     if (fPlayerType == P_HUMAN && sPlayerType == P_HUMAN) {
                         game->clear();
                         game->say("First player's turn.");
+                        game->standby();
                     }
-                    game->standby();
+
                 }
             }
         }

@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lyect/Desktop/OOOP/csvParser/CSVParser.h
+iostream
+-
+utility
+-
+vector
+-
+string
+-
+fstream
+-
+regex
+-
+type_traits
+-
+gtest/gtest.h
+-
+
+/home/lyect/Desktop/OOOP/csvParser/main.cpp
+iostream
+-
+tuple
+-
+CSVParser.h
+/home/lyect/Desktop/OOOP/csvParser/CSVParser.h
+

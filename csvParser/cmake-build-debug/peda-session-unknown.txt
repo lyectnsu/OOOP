@@ -1,0 +1,5 @@
+break /home/lyect/Desktop/OOOP/csvParser/GoogleTests/test.cpp:28
+break /home/lyect/Desktop/OOOP/csvParser/GoogleTests/test.cpp:16
+break /home/lyect/Desktop/OOOP/csvParser/GoogleTests/test.cpp:12
+
+set exec-wrapper The wrapper for running programs is \

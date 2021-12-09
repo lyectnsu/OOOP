@@ -32,7 +32,7 @@ std::vector<std::pair<size_t, size_t>> Field::getFreeCells() {
     std::vector<std::pair<size_t, size_t>> result;
     for (size_t x = 0; x < 10; ++x){
         for (size_t y = 0; y < 10; ++y){
-            if (fld[x][y] == M_BLANK && noShipsAround(x, y)){
+            if (fld[x][y] == M_BLANK){
                 result.emplace_back(x, y);
             }
         }

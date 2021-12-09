@@ -182,7 +182,7 @@ void SmartPlayer::placeShips(Field &playerField) {
     }
 
     for (size_t shipAmount = 0; shipAmount < 4; ++shipAmount){
-        auto freeCells = playerField.getFreeCells();
+        auto freeCells = playerField.getCellsForShip(1, 0);
 
         int freeCellsSize = freeCells.size();
         auto cell = freeCells[Random::get(0, freeCellsSize - 1)];
