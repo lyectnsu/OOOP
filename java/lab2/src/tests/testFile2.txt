@@ -1,0 +1,16 @@
+DEFINE x 13
+DEFINE y 23
+PUSH x
+PUSH -11
+# comment
+PUSH y
++
+
+
+# another comment
++
+SQRT
+PRINT
+
+# and another one comment
+

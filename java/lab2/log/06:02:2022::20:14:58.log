@@ -1,0 +1,64 @@
+Feb 06, 2022 8:15:00 PM calculator.Main main
+INFO: Path to file with commands came from keyboard.
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command type set to NULL.
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command arguments set.
+Feb 06, 2022 8:15:00 PM workers.NullWorker <init>
+INFO: workers.NullWorker constructed!
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command type set to DEFINE.
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command arguments set.
+Feb 06, 2022 8:15:00 PM workers.DefineWorker <init>
+INFO: workers.DefineWorker constructed!
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command type set to NULL.
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command arguments set.
+Feb 06, 2022 8:15:00 PM workers.NullWorker <init>
+INFO: workers.NullWorker constructed!
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command type set to NULL.
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command arguments set.
+Feb 06, 2022 8:15:00 PM workers.NullWorker <init>
+INFO: workers.NullWorker constructed!
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command type set to PUSH.
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command arguments set.
+Feb 06, 2022 8:15:00 PM workers.PushWorker <init>
+INFO: workers.PushWorker constructed!
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command type set to PUSH.
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command arguments set.
+Feb 06, 2022 8:15:00 PM workers.PushWorker <init>
+INFO: workers.PushWorker constructed!
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command type set to PUSH.
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command arguments set.
+Feb 06, 2022 8:15:00 PM workers.PushWorker <init>
+INFO: workers.PushWorker constructed!
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command type set to NULL.
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command arguments set.
+Feb 06, 2022 8:15:00 PM workers.NullWorker <init>
+INFO: workers.NullWorker constructed!
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command type set to SQRT.
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command arguments set.
+Feb 06, 2022 8:15:00 PM workers.SqrtWorker <init>
+INFO: workers.SqrtWorker constructed!
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command type set to PRINT.
+Feb 06, 2022 8:15:00 PM utility.CommandParser parseCommand
+INFO: Command arguments set.
+Feb 06, 2022 8:15:00 PM workers.PrintWorker <init>
+INFO: workers.PrintWorker constructed!
+Feb 06, 2022 8:15:00 PM calculator.Main main
+FINE: All commands have been executed!

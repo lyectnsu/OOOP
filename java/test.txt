@@ -1,0 +1,17 @@
+DEFINE a d
+
+
+
+
+
+PUSH 5
+
+
+PUSH a
++
+
+
+
+
+
+PRINT

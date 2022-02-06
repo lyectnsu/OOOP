@@ -1,0 +1,22 @@
+PUSH 1
+PUSH 2
+DEFINE variable 48
+
+#comment
+PUSH 3
+#another comment
+PUSH 4.0
+POP
++
++
+
+
+PUSH variable
+/
+PUSH 5
+*
+
+
+
+
+PRINT

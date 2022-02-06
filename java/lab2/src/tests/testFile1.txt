@@ -1,0 +1,10 @@
+
+DEFINE a 4
+
+# comment
+PUSH 1
+PUSH 3
+PUSH a
+# another comment
+SQRT
+PRINT
