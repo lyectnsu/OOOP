@@ -18,6 +18,13 @@ public class Parser {
 	private ArrayList<Entry<String, Integer>> sortedItems;
 	
 	public Parser(String fileName){
+		fileScanner = null;
+		sortedItems = null;
+		wordsTotal = 0;
+		if (fileName == null) {
+			System.err.println("Filename is \"NULL\"!");
+			return;
+		}
 		Path pathToFile = Paths.get(fileName);
 		try {
 			fileScanner = new Scanner(pathToFile);
@@ -25,12 +32,13 @@ public class Parser {
 		catch (IOException e) {
 			System.err.println("Error while opening file " + e.getLocalizedMessage());
 		}
-		sortedItems = null;
-		wordsTotal = 0;
 	}
 	
 	public void parse(){
-		
+		if (fileScanner == null) {
+			System.err.println("File wasn't opened!");
+			return;
+		}
 		HashMap<String, Integer> freq = new HashMap<String, Integer>();
 		
 		while (fileScanner.hasNextLine()) {

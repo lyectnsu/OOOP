@@ -13,7 +13,7 @@ public class Main {
 		
 		Parser pr = new Parser(fileName);
 		
-		//pr.parse();
+		pr.parse();
 		pr.printStatistics();
 		pr.printStatisticsToFile("/home/lyect/Desktop/OOOP/java/out.txt");
 	}
