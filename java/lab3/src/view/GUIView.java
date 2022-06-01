@@ -24,7 +24,6 @@ public class GUIView extends JFrame implements Runnable {
 	public GUIView(Controller _controller) {
 		controller = _controller;
 		addKeyListener(controller);
-		
 	}
 	
 	public void init() {
